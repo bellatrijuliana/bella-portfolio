@@ -123,7 +123,7 @@ export function Projects() {
                 {/* Content */}
                 <div className="px-6">
                   <CardHeader className="p-0 mb-2">
-                    <CardTitle className="text-xl text-gray-900 dark:text-white flex items-start gap-3">
+                    <CardTitle className="text-justify text-xl text-gray-900 dark:text-white flex items-start gap-3">
                       <IconComponent className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                       <span>{project.title}</span>
                     </CardTitle>

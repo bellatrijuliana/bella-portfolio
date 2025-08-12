@@ -225,7 +225,7 @@ export function Contact() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900 text-left">{service.title}</h4>
-                      <p className="text-sm text-gray-600">{service.description}</p>
+                      <p className="text-justify text-sm text-gray-600">{service.description}</p>
                     </div>
                   </div>
                 ))}

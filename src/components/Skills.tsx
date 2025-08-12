@@ -92,8 +92,8 @@ export function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-8">
-      <div className="bg-secondary">
+    <section id="skills" className="py-6 bg-secondary">
+      <div className="">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -136,7 +136,7 @@ export function Skills() {
 
           {/* Testing Platforms */}
           <div className="mb-6">
-            <h3 className="text-2xl font-semibold mb-6 text-center text-primary">
+            <h3 className="text-2xl font-semibold mb-2 py-6 text-center text-primary">
               Testing Platforms
             </h3>
             <div className="flex flex-wrap justify-center gap-4">
@@ -152,13 +152,13 @@ export function Skills() {
           </div>
 
           {/* Soft Skills */}
-          <div>
-            <h3 className="text-2xl font-semibold mb-6 text-center text-primary">
+          <div className="mb-6">
+            <h3 className="text-2xl font-semibold mb-2 py-6 text-center text-primary">
               Soft Skills
             </h3>
             <div className="flex flex-wrap justify-center gap-4">
               {softSkills.map((skill, index) => (
-                <Badge key={index} variant="outline" className="px-4 py-2 border-primary/20 text-primary bg-white mb-10">
+                <Badge key={index} variant="outline" className="px-4 py-2 border-primary/20 text-primary bg-white">
                   <div className="flex items-center space-x-2">
                     {skill.icon}
                     <span>{skill.name}</span>

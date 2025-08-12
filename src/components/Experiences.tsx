@@ -91,7 +91,7 @@ export function Experience() {
   ];
 
   return (
-    <section id="experience" className="bg-white">
+    <section id="experience" className="bg-white mt-8">
       <div className="container max-w-6xl mx-auto px-4 mb-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -176,7 +176,7 @@ export function Experience() {
 
           {/* Certifications */}
           <div>
-            <h3 className="text-3xl font-bold mb-2 text-center text-primary">
+            <h3 className="text-2xl font-semibold mb-2 text-center text-primary">
               Certifications & Training
             </h3>
             <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
