@@ -28,7 +28,7 @@ export function Hero() {
                 Get In Touch
               </a>
 <a
-  href="/CV-Bella-Tri-Juliana.pdf"
+  href="/Bella-resume.pdf"
   target="_blank"
   rel="noopener noreferrer"
   className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
