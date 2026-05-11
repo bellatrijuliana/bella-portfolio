@@ -1,7 +1,7 @@
 .page {
   min-height: 100vh;
   padding: 8rem 4rem 5rem;
-  background: var(--warm-white);
+  background: var(--cream);
 }
 
 .inner {
@@ -40,19 +40,6 @@
   margin-bottom: 0.75rem;
 }
 
-.date {
-  font-size: 0.875rem;
-  color: var(--warm-gray);
-  margin-bottom: 2.5rem;
-}
-
-.deco {
-  width: 40px;
-  height: 2px;
-  background: var(--burgundy);
-  margin-bottom: 2.5rem;
-}
-
 .meta {
   display: flex;
   flex-direction: column;
@@ -72,13 +59,20 @@
   margin: 0;
 }
 
+.deco {
+  width: 40px;
+  height: 2px;
+  background: var(--burgundy);
+  margin-bottom: 2.5rem;
+}
+
+/* ── Content ── */
 .content {
   font-size: 1rem;
-  line-height: 1.85;
+  line-height: 1.8;
   color: var(--charcoal);
   text-align: justify;
   hyphens: auto;
-  line-height: 1.8;
 }
 
 .content h2 {
@@ -110,7 +104,18 @@
   font-style: italic;
 }
 
-/* ── Blockquote (untuk > callout di markdown) ── */
+.content :global(a) {
+  color: var(--burgundy);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s;
+}
+
+.content :global(a:hover) {
+  text-decoration-color: var(--burgundy);
+}
+
 .content :global(blockquote) {
   border-left: 3px solid var(--burgundy);
   margin: 1.75rem 0;
@@ -125,7 +130,6 @@
   font-style: italic;
 }
 
-/* ── Lists ── */
 .content :global(ul),
 .content :global(ol) {
   margin: 0 0 1.25rem 1.25rem;
@@ -165,7 +169,6 @@
   font-weight: 600;
 }
 
-/* ── Table ── */
 .content :global(table) {
   width: 100%;
   border-collapse: collapse;
@@ -183,13 +186,8 @@
   letter-spacing: 0.05em;
 }
 
-.content :global(th:first-child) {
-  border-radius: 6px 0 0 0;
-}
-
-.content :global(th:last-child) {
-  border-radius: 0 6px 0 0;
-}
+.content :global(th:first-child) { border-radius: 6px 0 0 0; }
+.content :global(th:last-child) { border-radius: 0 6px 0 0; }
 
 .content :global(td) {
   padding: 10px 14px;
@@ -198,27 +196,19 @@
   vertical-align: top;
 }
 
-.content :global(tr:last-child td) {
-  border-bottom: none;
-}
-
-.content :global(tr:hover td) {
-  background: #fdf8f8;
-}
-
+.content :global(tr:last-child td) { border-bottom: none; }
+.content :global(tr:hover td) { background: #fdf8f8; }
 .content :global(td:first-child) {
   color: var(--charcoal);
   font-weight: 500;
 }
 
-/* ── Horizontal rule (---) ── */
 .content :global(hr) {
   border: none;
   border-top: 1px solid #eee;
   margin: 2.5rem 0;
 }
 
-/* ── Code blocks ── */
 .content :global(pre) {
   background: #2d2d2d;
   color: #ccc;
@@ -243,61 +233,17 @@
   font-family: monospace;
 }
 
-/* ── Images ── */
 .content :global(img) {
   max-width: 100%;
   width: 100%;
-  min-height: 200px;
   height: auto;
-  display: inline-block;
+  display: block;
   margin: 2rem auto;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  background-color: #f0f0f0;
 }
 
-.content :global(img + em),
-.content :global(img + p) {
-  display: block;
-  text-align: center;
-  font-size: 0.85rem;
-  color: var(--warm-gray);
-  margin-top: -1.5rem;
-  margin-bottom: 2rem;
-  font-style: italic;
-}
-
-.content :global(figure) {
-  margin: 2rem 0;
-  text-align: center;
-}
-
-.content :global(figcaption) {
-  font-size: 0.85rem;
-  color: var(--warm-gray);
-  margin-top: 0.75rem;
-  font-style: italic;
-}
-
-.content :global(a) {
-  color: var(--burgundy);
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  text-underline-offset: 3px;
-  transition: text-decoration-color 0.2s;
-}
-
-.content :global(a:hover) {
-  text-decoration-color: var(--burgundy);
-}
-
-.notFound {
-  text-align: center;
-  padding: 4rem;
-  color: var(--warm-gray);
-}
-
-/* ── Share Minimalis ── */
+/* ── Mini Share ── */
 .miniShare {
   display: flex;
   gap: 12px;
@@ -313,11 +259,9 @@
   transition: color 0.2s;
 }
 
-.miniShare button:hover {
-  color: #000;
-}
+.miniShare button:hover { color: #000; }
 
-/* ── Share Section Bawah ── */
+/* ── Share Section ── */
 .shareSection {
   margin-top: 60px;
   padding: 30px;
@@ -354,12 +298,7 @@
   border-color: #000;
 }
 
-.divider {
-  margin: 60px 0;
-  border: 0;
-  border-top: 1px solid #eee;
-}
-
+/* ── Next / Prev Nav ── */
 .articleNav {
   display: flex;
   justify-content: space-between;
@@ -375,13 +314,8 @@
   max-width: 45%;
 }
 
-.navPrev {
-  align-items: flex-start;
-}
-
-.navNext {
-  align-items: flex-end;
-}
+.navPrev { align-items: flex-start; }
+.navNext { align-items: flex-end; }
 
 .navPrev span, .navNext span {
   font-size: 0.75rem;
@@ -401,6 +335,13 @@
   color: var(--burgundy);
 }
 
+/* ── Divider ── */
+.divider {
+  margin: 60px 0;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
 /* ── Comment Section ── */
 .commentSection {
   margin-bottom: 100px;
@@ -417,8 +358,7 @@
   gap: 15px;
 }
 
-.input,
-.textarea {
+.input, .textarea {
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: 6px;
@@ -441,12 +381,18 @@
   font-weight: 600;
 }
 
-.submitBtn:hover {
-  opacity: 0.8;
+.submitBtn:hover { opacity: 0.8; }
+
+.notFound {
+  text-align: center;
+  padding: 4rem;
+  color: var(--warm-gray);
 }
 
 @media (max-width: 480px) {
-  .content {
-    text-align: left;
-  }
+  .page { padding: 6rem 1.5rem 3rem; }
+  .title { font-size: 1.75rem; }
+  .content { text-align: left; }
+  .articleNav { flex-direction: column; gap: 24px; }
+  .navPrev, .navNext { max-width: 100%; align-items: flex-start; }
 }

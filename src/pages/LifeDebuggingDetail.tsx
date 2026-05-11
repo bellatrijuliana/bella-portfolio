@@ -3,46 +3,45 @@ import { useState, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'
-import { getArticleById, getAdjacentArticles } from '../lib/articles'
+import { getLifePostById, getAllLifePosts } from '../lib/lifedebugging'
 import { supabase } from '../lib/supabase'
-import styles from './ArticleDetail.module.css'
+import styles from './LifeDebuggingDetail.module.css'
 
-
-
-const ArticleDetail = () => {
+const LifeDebuggingDetail = () => {
   const { id } = useParams<{ id: string }>()
-  const article = getArticleById(id!)
-  const { prev, next } = getAdjacentArticles(id ?? '')
+  const post = getLifePostById(id!)
+  const [views, setViews] = useState<number | null>(null)
   const [commentName, setCommentName] = useState('')
   const [commentText, setCommentText] = useState('')
-  const [views, setViews] = useState<number | null>(null)
-  
-useEffect(() => {
-  window.scrollTo(0, 0)
-}, [id])
 
-useEffect(() => {
-  if (!id) return
+  // Next / Prev
+  const all = getAllLifePosts()
+  const index = all.findIndex(p => p.id === (id ?? ''))
+  const prev = index < all.length - 1 ? all[index + 1] : null
+  const next = index > 0 ? all[index - 1] : null
 
-  const incrementViews = async () => {
-    const { data } = await supabase.rpc('increment_views', { article_id_input: id })
-    setViews(data ?? null)
-  }
+  useEffect(() => {
+    if (!id) return
 
-  incrementViews()
-}, [id])
+    const incrementViews = async () => {
+      const { data } = await supabase.rpc('increment_life_views', { article_id_input: id })
+      setViews(data ?? null)
+    }
 
-  if (!article) return (
+    incrementViews()
+  }, [id])
+
+  if (!post) return (
     <main className={styles.page}>
       <div className={styles.notFound}>
-        <p>Artikel tidak ditemukan.</p>
-        <Link to="/articles">← Kembali ke semua artikel</Link>
+        <p>Post tidak ditemukan.</p>
+        <Link to="/lifedebugging">← Kembali</Link>
       </div>
     </main>
   )
 
   const shareUrl = window.location.href
-  const shareTitle = article.title
+  const shareTitle = post.title
 
   const handleShare = (platform: string) => {
     const urls: Record<string, string> = {
@@ -62,18 +61,18 @@ useEffect(() => {
   return (
     <main className={styles.page}>
       <article className={styles.inner}>
-        <Link to="/articles" className={styles.back}>← Semua Artikel</Link>
+        <Link to="/lifedebugging" className={styles.back}>← Life Debugging</Link>
 
-        <p className={styles.category}>{article.category}</p>
-        <h1 className={styles.title}>{article.title}</h1>
+        <p className={styles.category}>{post.category}</p>
+        <h1 className={styles.title}>{post.title}</h1>
+
         <div className={styles.meta}>
-          <p className={styles.date}>{article.date}</p>
+          <p className={styles.date}>{post.date}</p>
           {views !== null && (
             <p className={styles.views}>👁 {views} views</p>
           )}
         </div>
 
-        {/* Share Minimalis di Bawah Judul */}
         <div className={styles.miniShare}>
           <button onClick={() => handleShare('x')}>𝕏</button>
           <button onClick={() => handleShare('linkedin')}>in</button>
@@ -84,13 +83,13 @@ useEffect(() => {
 
         <div className={styles.content}>
           <ReactMarkdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>
-            {article.content}
+            {post.content}
           </ReactMarkdown>
         </div>
 
-        {/* Share Section Bawah */}
+        {/* Share Section */}
         <div className={styles.shareSection}>
-          <p className={styles.shareLabel}>Like this article? Share it with your friends:</p>
+          <p className={styles.shareLabel}>Like this post? Share it:</p>
           <div className={styles.shareGrid}>
             <button onClick={() => handleShare('linkedin')} className={styles.shareBtn}>LinkedIn</button>
             <button onClick={() => handleShare('x')} className={styles.shareBtn}>X (Twitter)</button>
@@ -99,24 +98,25 @@ useEffect(() => {
           </div>
         </div>
 
-{/* Taruh sebelum <hr className={styles.divider} /> */}
-<div className={styles.articleNav}>
-  {prev ? (
-    <Link to={`/articles/${prev.id}`} className={styles.navPrev}>
-      <span>← Previous</span>
-      <strong>{prev.title}</strong>
-    </Link>
-  ) : <div />}
-  {next ? (
-    <Link to={`/articles/${next.id}`} className={styles.navNext}>
-      <span>Next →</span>
-      <strong>{next.title}</strong>
-    </Link>
-  ) : <div />}
-</div>
+        {/* Next / Prev */}
+        <div className={styles.articleNav}>
+          {prev ? (
+            <Link to={`/lifedebugging/${prev.id}`} className={styles.navPrev}>
+              <span>← Previous</span>
+              <strong>{prev.title}</strong>
+            </Link>
+          ) : <div />}
+          {next ? (
+            <Link to={`/lifedebugging/${next.id}`} className={styles.navNext}>
+              <span>Next →</span>
+              <strong>{next.title}</strong>
+            </Link>
+          ) : <div />}
+        </div>
+
         <hr className={styles.divider} />
 
-        {/* Komentar Section */}
+        {/* Comment Section */}
         <section className={styles.commentSection}>
           <h3 className={styles.commentTitle}>Leave a Comment</h3>
           <form className={styles.commentForm} onSubmit={(e) => e.preventDefault()}>
@@ -128,7 +128,7 @@ useEffect(() => {
               onChange={(e) => setCommentName(e.target.value)}
             />
             <textarea
-              placeholder="What do you think about this article?"
+              placeholder="What do you think about this post?"
               className={styles.textarea}
               value={commentText}
               onChange={(e) => setCommentText(e.target.value)}
@@ -142,4 +142,4 @@ useEffect(() => {
   )
 }
 
-export default ArticleDetail
+export default LifeDebuggingDetail

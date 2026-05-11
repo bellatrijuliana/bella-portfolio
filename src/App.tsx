@@ -8,6 +8,7 @@ import ArticleDetail from './pages/ArticleDetail'
 import Services from './pages/Services'
 import Mentorship from './pages/Mentorship'
 import LifeDebugging from './pages/LifeDebugging' 
+import LifeDebuggingDetail from './pages/LifeDebuggingDetail' 
 import LittleLab from './pages/LittleLab'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/mentorship" element={<Mentorship />} />
         <Route path="/lifedebugging" element={<LifeDebugging />} />
+        <Route path="/lifedebugging/:id" element={<LifeDebuggingDetail />} />
         <Route path="/LittleLab" element={<LittleLab />} />
       </Routes>
       <Footer />

@@ -14,6 +14,15 @@ export interface Article extends ArticleMeta {
   content: string
 }
 
+export function getAdjacentArticles(id: string): { prev: ArticleMeta | null; next: ArticleMeta | null } {
+  const all = getAllArticles()
+  const index = all.findIndex(a => a.id === id)
+  return {
+    prev: index > 0 ? all[index - 1] : null,
+    next: index < all.length - 1 ? all[index + 1] : null,
+  }
+}
+
 const AVAILABLE_THEMES = ['mint', 'purple', 'sky', 'rose']
 
 const articleFiles = import.meta.glob('../content/articles/*.md', {

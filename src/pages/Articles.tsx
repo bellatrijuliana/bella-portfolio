@@ -98,10 +98,10 @@ const Articles = () => {
                 key={article.id} 
                 className={index === 0 ? styles.featuredItem : styles.regularItem}
               >
-                <ArticleCard 
-                  article={article} 
-                  variant={index === 0 ? "featured" : "small"} 
-                />
+<ArticleCard
+  article={article}
+  variant="small"
+/>
               </div>
             ))
           ) : (

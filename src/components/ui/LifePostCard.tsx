@@ -45,7 +45,7 @@ const LifePostCard = ({ post, variant }: Props) => {
 
   if (variant === 'featured') {
     return (
-      <Link to={`/life-debugging/${post.id}`} className={styles.cardFeatured}>
+      <Link to={`/lifedebugging/${post.id}`} className={styles.cardFeatured}>
         {image}
         {fallbackDiv}
         <div className={styles.bodyFeatured}>
@@ -61,7 +61,7 @@ const LifePostCard = ({ post, variant }: Props) => {
   }
 
   return (
-    <Link to={`/life-debugging/${post.id}`} className={styles.cardSmall}>
+    <Link to={`/lifedebugging/${post.id}`} className={styles.cardSmall}>
       {image}
       {fallbackDiv}
       <div className={styles.bodySmall}>
