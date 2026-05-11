@@ -1,0 +1,371 @@
+.page {
+  min-height: 100vh;
+  padding: 8rem 4rem 5rem;
+  background: var(--cream);
+}
+
+.inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  margin-bottom: 0.5rem;
+}
+
+.deco {
+  width: 40px;
+  height: 2px;
+  background: var(--burgundy);
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  border: 1px solid var(--burgundy);
+  padding: 0.4rem 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 2px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  line-height: 1.2;
+  margin-bottom: 3rem;
+}
+
+
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.gridSmall {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+  .page { padding: 6rem 1.5rem 3rem; }
+}
+
+.articleGrid {
+  display: grid;
+ 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 24px;
+  margin-top: 40px;
+}
+
+
+.featuredItem {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.regularItem {
+  grid-column: span 1;
+}
+
+/* TABLET: Ubah jadi 2 kolom */
+@media (max-width: 1024px) {
+  .articleGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .featuredItem {
+    grid-column: span 2; /* Tetap lebar tapi mengikuti 2 kolom */
+  }
+}
+
+/* HP: Semua jadi 1 kolom */
+@media (max-width: 640px) {
+  .articleGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .featuredItem {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+/* Styling Button Pagination agar terlihat minimalis */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.loadMoreBtn {
+  background: #f4f4f4;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 100px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.loadMoreBtn:hover {
+  background: #000;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.inner {
+  max-width: 1200px; /* Batas maksimal lebar konten agar tidak terlalu melar di monitor ultrawide */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.articleGrid {
+  display: grid;
+  /* KUNCI UTAMA: 
+     - 'auto-fill' akan membuat kolom sebanyak mungkin yang muat.
+     - 'minmax(350px, 1fr)' artinya setiap kotak minimal lebarnya 350px, 
+       tapi kalau ada sisa ruang, dia bakal melebar (1fr) mengisi sisa space tersebut. 
+  */
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 32px; /* Jarak antar kotak artikel */
+  margin-top: 40px;
+  width: 100%;
+}
+
+/* --- TAMPILAN KHUSUS DESKTOP --- */
+@media (min-width: 1024px) {
+  /* Jika kamu tetap ingin artikel terbaru (pertama) terlihat lebih dominan 
+     tapi tetap dalam grid yang lebar, aktifkan ini: */
+  .featuredItem {
+    grid-column: span 2; /* Dia akan memakan jatah 2 kotak */
+  }
+}
+
+/* --- TAMPILAN MOBILE --- */
+@media (max-width: 640px) {
+  .articleGrid {
+    /* Di mobile, paksa jadi 1 kolom saja agar rapi seperti screenshot-mu */
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .featuredItem {
+    grid-column: span 1; /* Di mobile kembali jadi ukuran biasa */
+  }
+}
+
+/* Pagination Button agar tetap di tengah */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 80px 0;
+}
+
+.loadMoreBtn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.loadMoreBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Container Utama Filter */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap; /* Supaya kalau gak muat, otomatis turun ke bawah */
+  gap: 16px;
+  margin: 30px 0;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Group Label + Select */
+.filterGroup {
+  display: flex;
+  flex-direction: column; /* Label di atas, Select di bawah (lebih rapi di mobile) */
+  gap: 6px;
+  flex: 1; /* Biar masing-masing filter bagi rata ruang */
+  min-width: 140px; /* Jangan sampai kekecilan banget */
+}
+
+.filterGroup label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+  font-weight: 700;
+}
+
+.filterGroup select {
+  appearance: none; /* Hapus style default browser */
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  font-size: 1rem;
+  width: 100%;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  /* Icon panah custom (optional) */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23666%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
+
+.filterGroup select:focus {
+  outline: none;
+  border-color: #000;
+}
+
+/* --- Media Queries untuk Layar Kecil (Mobile) --- */
+@media (max-width: 640px) {
+  .toolbar {
+    gap: 12px;
+    margin: 20px 0;
+  }
+
+  .filterGroup {
+    flex: 1 1 100%; /* Di mobile banget, filter jadi full width (tumpuk) */
+  }
+
+  .title {
+    font-size: 2rem; /* Kecilin dikit ukuran font title biar gak menuhin layar */
+    line-height: 1.2;
+  }
+}
+
+
+/* Styling Deskripsi di Bawah Judul */
+.description {
+  font-size: 1rem;
+  color: var(--warm-gray);
+  line-height: 1.8;
+  margin-bottom: 3.5rem;
+  max-width: 500px;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* Styling tambahan untuk kata-kata yang di-bold di dalam deskripsi */
+.description strong {
+  color: #631923; /* Pakai warna marun yang sama untuk highlight keyword */
+  font-weight: 600;
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 640px) {
+  .description {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+}
+
+/* --- Penyesuaian Sedikit pada Title --- */
+.title {
+  margin-bottom: 16px; /* Perkecil jarak ke deskripsi */
+}
+
+.label {
+  margin-bottom: 8px; /* Jarak pas ke judul */
+}
+
+/* Container Journey / Pills */
+.journeySection {
+  margin-top: 40px;
+  margin-bottom: 24px;
+}
+
+.journeyLabel {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #631923; /* Marun sesuai tema */
+  margin-bottom: 16px;
+}
+
+.pillContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill {
+  padding: 10px 24px;
+  border: 1.5px solid #ddd;
+  background: transparent;
+  border-radius: 50px; /* Bentuk lonjong/pill */
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+.pill:hover {
+  border-color: #631923;
+  color: #631923;
+}
+
+/* State Aktif untuk Pill */
+.activePill {
+  background-color: #631923;
+  border-color: #631923;
+  color: #fff !important;
+}
+
+/* Toolbar Dropdown tetap rapi di bawah Pills */
+.toolbar {
+  display: flex;
+  gap: 20px;
+  padding-top: 24px;
+  padding-bottom: 30px;
+  border-top: 1px solid #eee; /* Kasih pemisah halus */
+}
+
+/* Responsif */
+@media (max-width: 640px) {
+  .pillContainer {
+    gap: 8px;
+  }
+  
+  .pill {
+    padding: 8px 18px;
+    font-size: 0.8rem;
+    flex: 1 1 auto; /* Biar pill memenuhi baris di HP */
+    text-align: center;
+  }
+  
+  .toolbar {
+    flex-direction: column;
+  }
+}

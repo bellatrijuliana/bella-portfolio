@@ -1,0 +1,210 @@
+.page {
+  min-height: 100vh;
+  padding: 8rem 4rem 5rem;
+  background: var(--warm-white);
+}
+
+.inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.back {
+  display: inline-block;
+  font-size: 0.875rem;
+  color: var(--warm-gray);
+  text-decoration: none;
+  margin-bottom: 2.5rem;
+  transition: color 0.2s;
+}
+
+.back:hover {
+  color: var(--burgundy);
+}
+
+.category {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.date {
+  font-size: 0.875rem;
+  color: var(--warm-gray);
+  margin-bottom: 2.5rem;
+}
+
+.deco {
+  width: 40px;
+  height: 2px;
+  background: var(--burgundy);
+  margin-bottom: 2.5rem;
+}
+
+.content {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--charcoal);
+  text-align: justify;
+  hyphens: auto;
+  line-height: 1.8; /* Kasih jarak antar baris biar lebih enak dibaca */
+}
+
+.content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem;
+  color: var(--charcoal);
+}
+
+.content h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 1.5rem 0 0.75rem;
+  color: var(--charcoal);
+}
+
+.content p {
+  margin-bottom: 1.25rem;
+  color: var(--warm-gray);
+}
+
+.content strong {
+  color: var(--charcoal);
+  font-weight: 500;
+}
+
+.content em {
+  font-style: italic;
+}
+
+.notFound {
+  text-align: center;
+  padding: 4rem;
+  color: var(--warm-gray);
+}
+
+/* Share Minimalis */
+.miniShare {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.miniShare button {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.miniShare button:hover {
+  color: #000;
+}
+
+/* Share Section Bawah */
+.shareSection {
+  margin-top: 60px;
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.shareLabel {
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.shareGrid {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.shareBtn {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.shareBtn:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.divider {
+  margin: 60px 0;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+/* Comment Section */
+.commentSection {
+  margin-bottom: 100px;
+}
+
+.commentTitle {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.commentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input, .textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.submitBtn {
+  align-self: flex-start;
+  padding: 12px 24px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.submitBtn:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+  .content {
+    text-align: left; /* Di HP balik ke rata kiri saja */
+  }
+}

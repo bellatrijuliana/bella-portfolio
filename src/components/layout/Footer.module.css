@@ -1,0 +1,59 @@
+.footer {
+  background: var(--charcoal);
+  color: white;
+  padding: 2.5rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.copy {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  letter-spacing: 0.05em;
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.links a {
+  color: white;
+  opacity: 0.5;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: opacity 0.2s;
+}
+
+.links a:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 2rem 1.5rem;
+    gap: 1rem;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-end;
+  }
+}

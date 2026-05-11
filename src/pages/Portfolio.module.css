@@ -1,0 +1,397 @@
+.page {
+  min-height: 100vh;
+  padding: 8rem 4rem 5rem;
+  background: var(--warm-white);
+}
+
+.inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.header {
+  margin-bottom: 5rem;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--warm-gray);
+  line-height: 1.7;
+  max-width: 520px;
+  text-align: justify;
+}
+
+.deco {
+  width: 40px;
+  height: 2px;
+  background: var(--burgundy);
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  border: 1px solid var(--burgundy);
+  padding: 0.4rem 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 2px;
+}
+
+/* SECTION */
+.section {
+  margin-bottom: 4rem;
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+/* EXPERIENCE */
+.expCard {
+  padding: 1.75rem;
+  background: var(--cream);
+  border-radius: 4px;
+  border: 1px solid var(--light-gray);
+}
+
+.expHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+  gap: 1rem;
+}
+
+.expTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.expBadge {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  background: var(--burgundy-pale);
+  color: var(--burgundy);
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.expCompany {
+  font-size: 0.9rem;
+  color: var(--burgundy);
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+
+.expMeta {
+  font-size: 0.8rem;
+  color: var(--warm-gray);
+  margin-bottom: 1.25rem;
+}
+
+.expAchievements {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.expAchievement {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--warm-gray);
+  line-height: 1.6;
+}
+
+.expDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--burgundy);
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+.expTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.expTag {
+  font-size: 0.7rem;
+  padding: 0.25rem 0.6rem;
+  background: white;
+  color: var(--warm-gray);
+  border: 1px solid var(--light-gray);
+  border-radius: 2px;
+}
+
+/* PROJECTS */
+.projectsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.projectCard {
+  padding: 1.5rem;
+  background: var(--cream);
+  border-radius: 4px;
+  border: 1px solid var(--light-gray);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.projectCard:hover {
+  border-color: var(--burgundy);
+  transform: translateY(-2px);
+}
+
+.projectType {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+}
+
+.projectTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  line-height: 1.4;
+}
+
+.projectDesc {
+  font-size: 0.85rem;
+  color: var(--warm-gray);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.projectTag {
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  background: var(--burgundy-pale);
+  color: var(--burgundy);
+  border-radius: 2px;
+  font-weight: 500;
+}
+
+/* SKILLS */
+.skillsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.skillGroup {
+  padding: 1.25rem;
+  background: var(--cream);
+  border-radius: 4px;
+  border: 1px solid var(--light-gray);
+}
+
+.skillGroupTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+.skillList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.skillItem {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  background: white;
+  color: var(--warm-gray);
+  border: 1px solid var(--light-gray);
+  border-radius: 2px;
+}
+
+/* CERTIFICATIONS */
+.certGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.certCard {
+  padding: 1rem;
+  background: var(--cream);
+  border-radius: 4px;
+  border: 1px solid var(--light-gray);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s;
+}
+
+.certCard:hover {
+  border-color: var(--burgundy);
+}
+
+.certName {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  line-height: 1.4;
+  margin-bottom: 0.35rem;
+}
+
+.certIssuer {
+  font-size: 0.75rem;
+  color: var(--burgundy);
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.certYear {
+  font-size: 0.7rem;
+  color: var(--warm-gray);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .page { padding: 6rem 1.5rem 3rem; }
+  .title { font-size: 2.2rem; }
+  .projectsGrid { grid-template-columns: 1fr; }
+  .skillsGrid { grid-template-columns: 1fr; }
+  .certGrid { grid-template-columns: 1fr 1fr; }
+  .expHeader { flex-direction: column; }
+}
+
+.headerTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.linkedinBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--warm-gray);
+  text-decoration: none;
+  border: 1px solid var(--light-gray);
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 0.5rem;
+  transition: all 0.2s;
+}
+
+.linkedinBtn:hover {
+  border-color: var(--burgundy);
+  color: var(--burgundy);
+}
+
+.profileRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.profileName {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.profileRole {
+  font-size: 0.8rem;
+  color: var(--warm-gray);
+}
+
+.linkedinBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #0A66C2;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.linkedinBadge:hover {
+  background: #004182;
+}
+
+.linkedinLogo {
+  width: 16px;
+  height: 16px;
+  fill: white;
+}

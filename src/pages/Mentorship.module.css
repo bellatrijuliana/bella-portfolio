@@ -1,0 +1,422 @@
+.page {
+  min-height: 100vh;
+  padding: 8rem 4rem 5rem;
+  background: var(--warm-white);
+}
+
+.inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.deco {
+  width: 36px;
+  height: 2px;
+  background: var(--burgundy);
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  border: 1px solid var(--burgundy);
+  padding: 0.4rem 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 2px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--charcoal);
+  margin-bottom: 1rem;
+}
+
+.title em {
+  color: var(--burgundy);
+  font-style: italic;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--warm-gray);
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  max-width: 540px;
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--warm-gray);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+/* PROGRAMS */
+.programsSection {
+  margin-bottom: 4rem;
+}
+
+.programsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.programCard {
+  padding: 1.5rem;
+  background: var(--cream);
+  border-radius: 4px;
+  border: 1px solid var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.programCard:hover {
+  border-color: var(--burgundy);
+  transform: translateY(-2px);
+}
+
+.programIcon {
+  width: 40px;
+  height: 40px;
+  background: var(--burgundy-pale);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--burgundy);
+}
+
+.programType {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+}
+
+.programTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  line-height: 1.4;
+}
+
+.programDesc {
+  font-size: 0.825rem;
+  color: var(--warm-gray);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.programFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.programFeature {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.775rem;
+  color: var(--warm-gray);
+  line-height: 1.5;
+}
+
+.featureDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--burgundy);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.programCta {
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--light-gray);
+  font-size: 0.75rem;
+  color: var(--warm-gray);
+}
+
+.promoNote {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--burgundy);
+  background: var(--burgundy-pale);
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+}
+
+/* WHATSAPP CTA */
+.whatsappCta {
+  background: var(--burgundy);
+  border-radius: 4px;
+  padding: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.whatsappCtaText h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.35rem;
+}
+
+.whatsappCtaText p {
+  font-size: 0.85rem;
+  color: white;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+.whatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: white;
+  color: var(--burgundy);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.whatsappBtn:hover {
+  background: var(--cream);
+  transform: translateY(-1px);
+}
+
+/* EBOOKS */
+.ebooksSection {
+  margin-bottom: 3rem;
+}
+
+.ebooksGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.ebookCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--cream);
+  border-radius: 4px;
+  border: 1px solid var(--light-gray);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.ebookCard:hover {
+  border-color: var(--burgundy);
+  transform: translateY(-2px);
+}
+
+.ebookIcon {
+  width: 44px;
+  height: 44px;
+  background: var(--burgundy-pale);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--burgundy);
+  flex-shrink: 0;
+}
+
+.ebookLang {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  margin-bottom: 0.2rem;
+}
+
+.ebookTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 0.15rem;
+}
+
+.ebookPlatform {
+  font-size: 0.75rem;
+  color: var(--warm-gray);
+}
+
+.ebookArrow {
+  margin-left: auto;
+  color: var(--light-gray);
+  font-size: 1rem;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.ebookCard:hover .ebookArrow {
+  color: var(--burgundy);
+  transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+  .page { padding: 6rem 1.5rem 3rem; }
+  .title { font-size: 2.2rem; }
+  .programsGrid { grid-template-columns: 1fr; }
+  .ebooksGrid { grid-template-columns: 1fr; }
+  .whatsappCta { flex-direction: column; align-items: flex-start; }
+}
+
+/* =========================================
+   SECTION HEADERS (General)
+   ========================================= */
+.sectionHeader {
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-family: 'Playfair Display', serif; /* Disamakan dengan font judul utama */
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  line-height: 1.2;
+  margin-top: 0.5rem;
+}
+
+/* =========================================
+   EBOOKS SECTION (Tema disamakan dg Programs)
+   ========================================= */
+.ebooksSection {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.ebooksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Desain Kartu Ebook (Sama persis dg Program Card) */
+.ebookCard {
+  background: var(--cream);
+  border: 1px solid var(--light-gray);
+  padding: 1.5rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.ebookCard:hover {
+  border-color: var(--burgundy);
+  transform: translateY(-2px);
+}
+
+.ebookHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.ebookIcon {
+  width: 40px;
+  height: 40px;
+  background: var(--burgundy-pale);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--burgundy);
+}
+
+.ebookLang {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  background: var(--burgundy-pale);
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+}
+
+/* Tipografi di dalam kartu */
+.ebookTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.ebookDesc {
+  font-size: 0.825rem;
+  color: var(--warm-gray);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1; /* Mendorong tombol ke bawah */
+}
+
+/* Tombol Ebook */
+.ebookBtn {
+  display: block;
+  width: 100%;
+  background: transparent;
+  color: var(--burgundy);
+  border: 1px solid var(--burgundy);
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.ebookBtn:hover {
+  background: var(--burgundy);
+  color: white;
+}
+
+/* =========================================
+   DIVIDER (Pemisah Ebooks & Programs)
+   ========================================= */
+.divider {
+  border: 0;
+  border-top: 1px solid var(--light-gray);
+  margin: 4rem 0;
+}

@@ -1,0 +1,129 @@
+/* Mirror dari ArticleCard.module.css
+   Ganti class name .category → .mood, sisanya identik */
+
+.cardFeatured {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+  border: 1px solid var(--color-border);
+  transition: box-shadow 0.2s;
+}
+
+.cardFeatured:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.cardSmall {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+  border: 1px solid var(--color-border);
+  transition: box-shadow 0.2s;
+}
+
+.cardSmall:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Images */
+.imageFeatured {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.imageSmall {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.imageFallbackFeatured {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageFallbackSmall {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Body */
+.bodyFeatured {
+  padding: 24px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bodySmall {
+  padding: 16px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Mood label (replaces category) */
+.mood {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-wine);
+  margin: 0;
+}
+
+/* Titles */
+.titleFeatured {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.titleSmall {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.excerpt {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--color-mid);
+  margin: 0;
+}
+
+.date {
+  font-size: 12px;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+/* Theme placeholder (same as ArticleCard) */
+.placeholder {
+  height: 4px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.mint   { background: #D6EBE2; }
+.purple { background: #DDD8EA; }
+.sky    { background: #D6E8F0; }
+.rose   { background: #EDD8D8; }

@@ -1,0 +1,249 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 1.5rem 2.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 253, 249, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--light-gray);
+  box-sizing: border-box;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--burgundy);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--warm-gray);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.link:hover,
+.active {
+  color: var(--burgundy);
+}
+
+/* ── DROPDOWN ── */
+.dropdown {
+  position: relative;
+}
+
+.dropdownTrigger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: inherit;
+}
+
+.chevron {
+  font-size: 0.7rem;
+  transition: transform 0.2s;
+  display: inline-block;
+  line-height: 1;
+  margin-top: 1px;
+}
+
+.chevronUp {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 253, 249, 0.98);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--light-gray);
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+  min-width: 180px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.dropdownOpen {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdownLink {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: var(--warm-gray);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.2s, background 0.2s;
+}
+
+.dropdownLink:hover,
+.dropdownLink.active {
+  color: var(--burgundy);
+  background: rgba(99, 25, 35, 0.04);
+}
+
+/* ── HAMBURGER ── */
+.hamburger {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--burgundy);
+  transition: all 0.3s ease;
+  transform-origin: left center;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .nav {
+    padding: 1.2rem 1.5rem;
+    overflow: visible;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  gap: 3rem;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 101;
+    gap: 6px;
+  }
+
+  .hamburger.open .bar:nth-child(1) { transform: rotate(45deg); }
+  .hamburger.open .bar:nth-child(2) { opacity: 0; }
+  .hamburger.open .bar:nth-child(3) { transform: rotate(-45deg); }
+
+  .links {
+  margin-left: auto;
+    position: fixed;
+    top: 61px;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 253, 249, 0.98);
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .links.activeMenu {
+    max-height: 600px;
+    opacity: 1;
+    pointer-events: auto;
+    border-bottom: 1px solid var(--light-gray);
+  }
+
+  .navItem {
+    width: 100%;
+    text-align: center;
+  }
+
+  .link {
+    display: block;
+    padding: 1.25rem;
+    border-top: 1px solid var(--light-gray);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Dropdown mobile — expand inline */
+  .dropdown {
+    position: static;
+  }
+
+  .dropdownTrigger {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .dropdownMenu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    border: none;
+    border-top: none;
+    background: rgba(99, 25, 35, 0.03);
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    transition: max-height 0.3s ease;
+    min-width: unset;
+    white-space: normal;
+  }
+
+  .dropdownOpen {
+    max-height: 200px;
+    transform: none;
+    padding: 4px 0;
+  }
+
+  .dropdownLink {
+    padding: 1rem;
+    border-top: 1px solid var(--light-gray);
+    text-align: center;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.8rem;
+    color: var(--warm-gray);
+  }
+}

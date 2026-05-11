@@ -1,0 +1,282 @@
+.page {
+  min-height: 100vh;
+  padding: 8rem 4rem 5rem;
+  background: var(--cream);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  margin-bottom: 8px;
+}
+
+.deco {
+  width: 40px;
+  height: 2px;
+  background: var(--burgundy);
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  border: 1px solid var(--burgundy);
+  padding: 0.4rem 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 2px;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.description {
+  font-size: 1rem;
+  color: var(--warm-gray);
+  line-height: 1.8;
+  margin-bottom: 3.5rem;
+  max-width: 500px;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.description strong {
+  color: #631923;
+  font-weight: 600;
+}
+
+/* JOURNEY / MOOD PILLS */
+.journeySection {
+  margin-top: 40px;
+  margin-bottom: 24px;
+}
+
+.journeyLabel {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #631923;
+  margin-bottom: 16px;
+}
+
+.pillContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill {
+  padding: 10px 24px;
+  border: 1.5px solid #ddd;
+  background: transparent;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+.pill:hover {
+  border-color: #631923;
+  color: #631923;
+}
+
+.activePill {
+  background-color: #631923;
+  border-color: #631923;
+  color: #fff !important;
+}
+
+.pillCount {
+  opacity: 0.7;
+}
+
+/* TOOLBAR */
+.toolbar {
+  display: flex;
+  gap: 20px;
+  padding-top: 24px;
+  padding-bottom: 30px;
+  border-top: 1px solid #eee;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 140px;
+}
+
+.filterGroup label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+  font-weight: 700;
+}
+
+.filterGroup select {
+  appearance: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  font-size: 1rem;
+  width: 100%;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23666%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
+
+.filterGroup select:focus {
+  outline: none;
+  border-color: #000;
+}
+
+/* ARTICLE GRID */
+.articleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.featuredItem {
+  grid-column: span 2;
+}
+
+.regularItem {
+  grid-column: span 1;
+}
+
+/* NO RESULT */
+.noResult {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--warm-gray);
+}
+
+.noResult h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.noResult p {
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* PAGINATION */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 80px 0;
+}
+
+.loadMoreBtn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 16px 40px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.loadMoreBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* RESPONSIVE */
+@media (min-width: 1024px) {
+  .featuredItem {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 1024px) {
+  .articleGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featuredItem {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 6rem 1.5rem 3rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .description {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+  }
+
+  .articleGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .featuredItem {
+    grid-column: span 1;
+  }
+
+  .pillContainer {
+    gap: 8px;
+  }
+
+  .pill {
+    padding: 8px 18px;
+    font-size: 0.8rem;
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .filterGroup {
+    flex: 1 1 100%;
+  }
+}

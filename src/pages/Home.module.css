@@ -1,0 +1,589 @@
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.hero {
+  margin-top: 50px;
+  min-height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* KUNCI: Padding dinamis. 
+     Akan otomatis menyisakan sisa ruang di kiri-kanan jika layar lebih lebar dari 1100px */
+  padding: 8rem max(4rem, calc((100% - 1100px) / 2)) 4rem;
+  gap: 4rem;
+  align-items: center;
+  background: var(--warm-white);
+}
+
+.heroText {
+  max-width: 560px;
+}
+
+.heroTag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  border: 1px solid var(--burgundy);
+  padding: 0.4rem 1rem;
+  margin-bottom: 2rem;
+  border-radius: 2px;
+}
+
+.heroName {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--charcoal);
+  margin-bottom: 1rem;
+}
+
+.heroName span {
+  color: var(--burgundy);
+  font-style: italic;
+}
+
+.heroRole {
+  font-size: 1rem;
+  color: var(--warm-gray);
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.heroDesc {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--warm-gray);
+  margin-bottom: 2.5rem;
+  max-width: 440px;
+}
+
+.heroCta {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.btnPrimary {
+  background: var(--burgundy);
+  color: white;
+  padding: 0.875rem 2rem;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: all 0.3s;
+  border-radius: 2px;
+}
+
+.btnPrimary:hover {
+  background: var(--burgundy-light);
+  transform: translateY(-1px);
+}
+
+.btnSecondary {
+  color: var(--charcoal);
+  text-decoration: none;
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--charcoal);
+  padding-bottom: 2px;
+  transition: all 0.2s;
+}
+
+.btnSecondary:hover {
+  color: var(--burgundy);
+  border-color: var(--burgundy);
+}
+
+.heroImage {
+width: 100%; 
+  max-width: 450px; /* Sesuaikan lebar kotak pink di desain */
+  aspect-ratio: 4 / 5; /* Membuat kotak persegi panjang ke bawah yang konsisten */
+  
+  /* Masukkan Foto */
+  background-image: url('/public/port.jpg');
+  background-size: cover; /* Foto memenuhi kotak tanpa penyok */
+  background-position: center; /* Fokus di tengah */
+  background-repeat: no-repeat;
+  
+  /* Styling Tambahan */
+  background-color: #f3e8e9; /* Warna cadangan sebelum foto loading */
+  border-radius: 8px; /* Tumpulkan ujungnya sedikit */
+  position: relative; /* Penting agar frame bisa menempel di dalamnya */
+  overflow: hidden;
+}
+
+.heroImageFrame {
+position: absolute;
+  top: 20px;    /* Jarak garis dari tepi atas */
+  left: 20px;   /* Jarak garis dari tepi kiri */
+  right: 20px;  /* Jarak garis dari tepi kanan */
+  bottom: 20px; /* Jarak garis dari tepi bawah */
+  
+  border-radius: 4px;
+  pointer-events: none; /* Supaya kalau di-klik, gak ngeblok foto */
+  z-index: 10;
+}
+
+.heroImageFrame::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+/* =========================================
+   ABOUT SECTION
+   ========================================= */
+.about {
+  margin-top: 0;
+  background: var(--burgundy);
+  color: white;
+  /* KUNCI: Padding dinamis yang sama persis dengan hero agar sejajar atas ke bawah */
+  padding: 5rem max(4rem, calc((100% - 1100px) / 2));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.decoLine {
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.aboutTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+.aboutTitle em {
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.aboutText {
+  font-size: 1rem;
+  line-height: 1.8;
+  opacity: 0.85;
+  margin-bottom: 1.25rem;
+}
+
+.aboutLink {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+
+.aboutLink:hover {
+  opacity: 0.8;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.skillTag {
+  background: rgba(255,255,255,0.1);
+  padding: 0.75rem 1rem;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: background 0.2s;
+}
+
+.skillTag:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* ARTICLES PREVIEW */
+.articlesSection {
+  padding: 5rem 4rem;
+  background: var(--cream);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2.5rem;
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  margin-bottom: 0.5rem;
+}
+
+.sectionTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  line-height: 1.2;
+}
+
+.viewAll {
+  color: var(--warm-gray);
+  text-decoration: none;
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--light-gray);
+  padding-bottom: 2px;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.viewAll:hover {
+  color: var(--burgundy);
+  border-color: var(--burgundy);
+}
+
+.articlesList {
+  display: flex;
+  flex-direction: column;
+}
+
+.articleItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--light-gray);
+  text-decoration: none;
+  color: inherit;
+  transition: padding-left 0.2s;
+}
+
+.articleItem:hover {
+  padding-left: 0.75rem;
+}
+
+.articleCategory {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  margin-bottom: 0.3rem;
+}
+
+.articleTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  transition: color 0.2s;
+}
+
+.articleItem:hover .articleTitle {
+  color: var(--burgundy);
+}
+
+.articleMeta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-shrink: 0;
+  margin-left: 2rem;
+}
+
+.articleDate {
+  font-size: 0.875rem;
+  color: var(--warm-gray);
+}
+
+.articleArrow {
+  color: var(--light-gray);
+  transition: all 0.2s;
+}
+
+.articleItem:hover .articleArrow {
+  color: var(--burgundy);
+  transform: translateX(4px);
+}
+
+/* CONNECT */
+.connect {
+  padding: 5rem 4rem;
+  background: var(--cream);
+  text-align: center;
+  border-top: 1px solid var(--light-gray);
+}
+
+.connectInner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.connectDeco {
+  width: 40px;
+  height: 2px;
+  background: var(--burgundy);
+  margin: 0 auto 1.5rem;
+}
+
+.connectTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+.connectTitle span {
+  color: var(--burgundy);
+  font-style: italic;
+}
+
+.connectDesc {
+  font-size: 1rem;
+  color: var(--warm-gray);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.connectLinks {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.connectLinkPrimary {
+  background: var(--burgundy);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.connectLinkPrimary:hover {
+  background: var(--burgundy-light);
+  transform: translateY(-2px);
+}
+
+.connectLinkSecondary {
+  background: white;
+  color: var(--charcoal);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-size: 0.875rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.connectLinkSecondary:hover {
+  border-color: var(--burgundy);
+  color: var(--burgundy);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column; /* Stack: Gambar di atas, Teks di bawah */
+    min-height: auto;       /* Hapus paksaan satu layar penuh */
+    padding: 0;             /* Bersihkan padding luar */
+    width: 100%;
+    background: var(--warm-white); /* Kembalikan ke warna asli */
+    gap: 0;
+    align-items: flex-end;
+    justify-content: flex-end; /* Teks nempel ke bawah */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .heroImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Di belakang teks */
+    border-radius: 0;
+    border: none;
+    background-image: url('/public/port.jpg');
+    background-size: cover;
+    background-position: center center;
+    margin-bottom: 0;
+  }
+
+  .heroImageFrame::before {
+    display: none;
+  }
+
+  /* Overlay gelap supaya teks terbaca */
+  .heroImage::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+background: linear-gradient(
+  to bottom,
+  rgba(0, 0, 0, 0.95) 0%,   /* ATAS: Sangat pekat (hampir hitam) */
+  rgba(0, 0, 0, 0.6) 50%,   /* TENGAH: Agak pekat (masih kelihatan fotonya tapi gelap) */
+  rgba(0, 0, 0, 0.95) 100%  /* BAWAH: Sangat pekat (buat teks putih kontras banget) */
+);
+    z-index: 1;
+  }
+
+  .heroContent {
+    position: relative;
+    z-index: 2;
+    color: #ffffff; /* Ubah teks jadi putih agar kontras dengan overlay */
+    width: 100%;
+    margin-bottom: 40px; /* Jarak dari navigasi bawah jika ada */
+  }
+
+  .heroText {
+    position: relative;
+    z-index: 2;
+    order: 0;
+    padding: 2rem 1.5rem 3rem;
+    max-width: 100%;
+  }
+
+  /* Teks jadi putih supaya kontras dengan background */
+  .heroTag {
+    color: white;
+    border-color: rgba(255,255,255,0.5);
+  }
+
+  .heroName {
+    color: white;
+  }
+
+  .heroName span {
+    color: var(--accent);
+  }
+
+  .heroRole {
+    color: rgba(255,255,255,0.8);
+  }
+
+  .heroDesc {
+    color: rgba(255,255,255,0.7);
+  }
+
+  .btnSecondary {
+    color: white;
+    border-color: white;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .skillsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .articlesSection {
+    padding: 3rem 1.5rem;
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .connect {
+    padding: 3rem 1.5rem;
+  }
+
+  .articlesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- CONTAINER UNTUK WHITE SPACE --- */
+.articlesSection {
+  width: 100%;
+  padding: 80px 0; /* Jarak atas-bawah section */
+}
+
+.articlesInner {
+  max-width: 1100px; /* Atur batas lebar maksimal di sini. Semakin kecil angkanya, semakin lebar sisa ruang kosongnya */
+  margin: 0 auto; /* Otomatis ke tengah */
+  padding: 0 24px; /* Padding untuk layar HP/Tablet agar tidak mentok ke layar */
+}
+
+/* --- HEADER SECTION --- */
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.homeGrid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr; 
+  gap: 32px;
+  align-items: stretch; /* Memastikan kolom kiri & kanan sama tinggi */
+}
+
+.homeFeatured {
+  display: flex;
+  height: 100%;
+}
+
+/* Memaksa komponen ArticleCard di dalamnya melar 100% */
+.homeFeatured > * {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.homeSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* Jika kamu pakai 2 artikel di kanan, ini memastikan atas-bawah pas */
+  justify-content: space-between; 
+}
+
+/* --- RESPONSIVE LAYOUT --- */
+@media (max-width: 1024px) {
+  .homeGrid {
+    grid-template-columns: 1fr; /* Di tablet jadi atas-bawah */
+  }
+}
+
+@media (max-width: 640px) {
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
