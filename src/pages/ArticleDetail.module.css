@@ -417,6 +417,130 @@
   gap: 15px;
 }
 
+.commentCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: var(--burgundy);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 10px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.commentList {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.commentItem {
+  padding: 20px;
+  border: 1px solid var(--border, #eee);
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.commentHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.commentAvatar {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  background: var(--burgundy);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.commentName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin: 0;
+}
+
+.commentDate {
+  font-size: 0.75rem;
+  color: var(--warm-gray);
+  margin: 2px 0 0;
+}
+
+.commentMessage {
+  font-size: 0.9rem;
+  color: var(--warm-gray);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.replyBtn {
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  color: var(--warm-gray);
+  cursor: pointer;
+  padding: 4px 0;
+  margin-top: 8px;
+  transition: color 0.2s;
+}
+
+.replyBtn:hover {
+  color: var(--burgundy);
+}
+
+.replyForm {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.replyList {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 20px;
+  border-left: 2px solid #eee;
+}
+
+.replyItem {
+  padding: 14px;
+  background: #f9f9f9;
+  border-radius: 6px;
+}
+
+.commentAvatarSmall {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  background: var(--warm-gray);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
 .input,
 .textarea {
   padding: 12px;
