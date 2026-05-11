@@ -1,6 +1,6 @@
 ---
 title: "Applying for a QA Job with Zero Experience (How I Survived the Technical Test)"
-category: "API Testing"
+category: "QA Recruitment"
 level : "Beginner"
 date: "2026-03-26"
 excerpt: "I had no formal background in QA, but I took a leap of faith. During the interview, I was handed a website and a JSON file with zero instructions. Here’s how I handled it."

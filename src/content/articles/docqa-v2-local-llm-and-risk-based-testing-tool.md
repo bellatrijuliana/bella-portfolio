@@ -13,60 +13,61 @@ theme: "sky"
 *Estimated read: 6–7 minutes*
 
 ---
+
 I promised a follow-up and here it is. 😄
- 
+
 If you read [part one](https://bellatrijuliana.com/articles/i-got-tired-of-typing-test-cases-so-i-built-a-tool), I left you with a teaser: integrating a local LLM, risk-based testing, and what it looks like when AI writes the first draft of your test cases. That's exactly what this article is about.
- 
-What started as a selfish act of saving my poor fingers from the daily grind has grown into something I'm actually proud of. After sitting with it for a while and seeing how much it helped my own workflow, I decided to open-source it. So introducing **DocQA Case Engine v2.0**.
- 
+
+But I want to start with something I didn't expect because v2 taught me something beyond just "the tool got better."
+
 ---
- 
-## Wait, what's DocQA again?
- 
-In short: DocQA is a collection of Python scripts acting as an intelligent QA engine. The workflow is dead simple:
- 
-1. **Paste your User Story** : copy-paste the raw text straight from a Jira ticket or any user story doc. No reformatting needed.
-2. **The engine thinks for you** : the LLM analyzes the input and automatically generates test case scenarios, covering edge cases you might have missed.
-3. **Risk scores, automatically** : every scenario gets a Risk Priority Number (Probability × Impact), so you know exactly which features are risky and need prioritization.
-4. **You stay in control** : a curator review interface lets you validate, edit, and approve cases. The human is always the final judge.
-5. **Export your dashboard** : generate an HTML risk matrix dashboard showing probability vs. business impact across all your test scenarios.
+
+## The moment things clicked
+
+When DocQA v2 was up and running and I used it for the first time on a real feature, something shifted. I pasted in a raw user story, waited a few seconds, and watched the LLM break it down into test scenarios I would have spent 30–40 minutes writing manually. Not all of them were perfect. Some needed editing. A few I rejected outright.
+
+But in that moment, I realized: **documentation doesn't have to be the bottleneck anymore.**
+
+As a solo QA, the documentation side of the job, writing test cases, structuring scenarios, keeping everything organized had always been the part that quietly slowed everything else down. It wasn't glamorous. It wasn't the part anyone noticed. But it was the part that ate time.
+
+DocQA v2 was the first version where I genuinely felt that changing.
+
 ---
- 
-## The one rule I gave myself
- 
-When I started building v2.0, I set one non-negotiable constraint:
- 
-> 🔒 **It has to run 100% locally.** No data leaves the machine. The privacy of company requirement data stays completely safe.
- 
-This is what led me to **Ollama**. I'd been curious about running LLMs locally for a while, and this project gave me a real reason to dig in. With Ollama, I can run models like `Llama 3.2` or `Llama 3.1b` natively on my machine, no API keys, no subscription fees, no data being shipped off somewhere.
- 
----
- 
-## Why Ollama, specifically?
- 
-Honestly, the privacy angle sold me immediately. But a few other things made it feel like the right fit:
- 
-- 🔒 **100% Private** : zero data sent to external servers. Your company's user stories stay on your machine.
-- 💸 **No API costs** : no subscription, no token billing. Run it as many times as you want.
-- ⚡ **Ultra-fast locally** : once the model is pulled, inference is fast with no network latency.
-- 🔌 **REST API** : Ollama exposes a simple REST API, which makes background automation straightforward to integrate into Python scripts.
----
- 
-## What's actually new in v2.0?
- 
-Version 1.0 was more of a proof of concept. It worked, but it had sharp edges. Here's an honest look at where v2.0 changes things:
- 
+
+## What actually changed from DocQA v1
+
+The core problem with DocQA v1 wasn't the output, it was the input. Requirements had to be structured manually in a Python file, which meant I was still doing a significant amount of translation work before the tool could even help me.
+
+So, docQA v2 removed that entirely.
+
 | Feature | v1.0 (Legacy) | v2.0 (Current) |
 |---|---|---|
 | Core Engine | Standard Python Logic | Ollama LLM (Llama 3.2) |
 | Risk Assessment | Manual / Severity-based | AI Probability × Impact Score |
 | Input Method | Hardcoded `requirements_data.py` | Natural language / raw text paste |
 | Output Format | Basic HTML / CLI | Risk Matrix Dashboard |
- 
-The biggest shift is the **input method**. In v1.0, I had to manually enter requirements into a Python file, which, looking back, kind of defeated the purpose of automating anything. Now you just paste your user story as raw text and let the LLM handle the parsing.
- 
+
+The biggest shift is the **input method**. Copy-paste a user story as raw text. The LLM handles the parsing, the decomposition, the scenario generation. The mental overhead of translating requirements into structure, gone.
+
 ---
- 
+
+## The one rule I gave myself
+
+When building v2, I set one non-negotiable constraint:
+
+> **It has to run 100% locally.** No data leaves the machine. The privacy of company requirement data stays completely safe.
+
+This is what led me to **Ollama**. With Ollama, I can run models like `Llama 3.2` or `Llama 3.1b` natively, no API keys, no subscription fees, no data being shipped anywhere. In a startup environment where you're handling real product requirements, this matters.
+
+A few things that made Ollama the right fit:
+
+- **100% Private** : zero data sent to external servers
+- **No API costs** : no token billing, run it as many times as needed
+- **Fast locally** : once the model is pulled, no network latency
+- **REST API** : simple to integrate into Python scripts in the background
+
+---
+
 ## The Risk Matrix: the part I'm most proud of
 
  <figure>
@@ -76,46 +77,46 @@ The biggest shift is the **input method**. In v1.0, I had to manually enter requ
          loading="lazy"/>
     <figcaption>Risk Matrix in DocQA Case Engine v2</figcaption>
 </figure>
- 
-This is the piece that makes DocQA v2.0 actually useful in a real QA workflow, not just a novelty. Every test case scenario gets a Risk Priority Number calculated automatically:
- 
+
+Every test case scenario gets a Risk Priority Number calculated automatically:
+
 ```
 SCORE = PROBABILITY (1–5) × IMPACT (1–5)
- 
+
 HIGH > 15  |  CRITICAL > 20
 ```
- 
-What I like about this is that the LLM doesn't just *calculate* the score — it also explains *why* a scenario is rated high risk, reasoning through the business logic. That context makes it actually actionable rather than just a number you stare at.
- 
-For anything flagged as **Critical** or **High**, the engine can optionally do a deep-dive expansion: automatically generating additional edge case scenarios for those risky areas. You can then approve or edit these in the Curator Review interface before anything gets logged.
- 
+
+What makes this useful in practice is that the LLM doesn't just *calculate* the score, it explains *why* a scenario is rated high risk, reasoning through the business logic. That context is what makes it actionable rather than just a number.
+
+For anything flagged as Critical or High, the engine can optionally do a deep-dive expansion: generating additional edge case scenarios specifically for those risky areas. You review and approve in the Curator interface before anything gets logged.
+
 ---
- 
+
 ## How the modules connect
- 
-Internally, DocQA v2.0 is split into four modules that each handle a specific concern:
- 
-- **Requirement Analyzer** : Ollama-powered intake that parses raw user stories into structured test inputs. No manual coding required.
-- **Scenario Architect** : combines BVA and flow logic to construct comprehensive test coverage automatically.
-- **Risk Strategist** : calculates Probability & Impact scores and identifies Critical/High areas for targeted edge-case expansion.
-- **Curator Review** : human-in-the-loop interface for final validation, approval, and risk reporting. You stay in the loop.
+
+Internally, DocQA v2.0 is split into four modules:
+
+- **Requirement Analyzer** : Ollama-powered intake that parses raw user stories into structured test inputs
+- **Scenario Architect** : combines BVA and flow logic to construct comprehensive test coverage
+- **Risk Strategist** : calculates Probability & Impact scores and identifies Critical/High areas for edge-case expansion
+- **Curator Review** : human-in-the-loop interface for final validation and approval
+
 ---
- 
+
 ## The tech stack
- 
+
 | Layer | Tool |
 |---|---|
 | Core Logic | Python |
 | LLM Host | Ollama |
 | Case Storage | SQLite |
 | Dashboards | HTML5 |
- 
-Nothing exotic. Everything runs locally, and the dependencies are minimal by design. If you can run Python and install Ollama, you're basically good to go.
- 
+
+Single project folder. No exotic dependencies. If Python and Ollama are installed, everything else follows.
+
 ---
- 
-## Is it production-ready?
- 
+
+## Honest notes on where it still fell short
 
  <figure>
     <img src="/docqa2.jpg"
@@ -125,19 +126,14 @@ Nothing exotic. Everything runs locally, and the dependencies are minimal by des
     <figcaption>HTML Dashboard of DocQA v2</figcaption>
 </figure>
 
+DocQA v2 was a significant step forward. But using it day-to-day also made the remaining gaps more visible.
 
-Yes and I've been using it in my actual daily work to prove it. DocQA v2.0 has gone through enough real-world usage and refinement that I'm confident calling it production-ready. It's not a prototype anymore.
- 
-That said, it's still an evolving tool. There's room to grow, better prompt engineering, more model support, a cleaner UI down the road. But the core workflow is stable, the risk scoring is reliable, and it genuinely saves time. That's the bar I set for myself, and it clears it.
- 
+The generation quality was good, not always perfect. Some scenarios needed editing, some I'd reject. The risk scoring was useful but still felt like it was missing the bigger picture: what happened *after* a test case was generated? Execution tracking, defect management, version control when requirements changed mid-sprint, all of that was still manual.
+
+I kept a running list of everything I wished the tool could do. That list eventually became the foundation for the next version.
+
+But that's a story for another article.
+
 ---
- 
-## Check it out
- 
-You can access the repository here → [github.com/DocQA](https://lnkd.in/gDAAHnYc)
- 
-Feel free to clone it, run it locally, tinker around, or just browse the source code. If you have thoughts, feedback, or want to contribute, I'm all ears. Drop a comment or open an issue on the repo.
- 
----
- 
-*Thanks for reading this far and for all the kind words on the first article. It genuinely means a lot. 💚*
+
+*Next: Zelqa is coming next, a full QA lifecycle framework built from everything DocQA couldn't do. If you've ever felt like documentation is the part of QA that quietly eats your time, that one's for you.*

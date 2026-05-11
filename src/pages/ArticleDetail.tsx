@@ -6,6 +6,7 @@ import remarkGfm from 'remark-gfm'
 import { getArticleById, getAdjacentArticles } from '../lib/articles'
 import { supabase } from '../lib/supabase'
 import styles from './ArticleDetail.module.css'
+import MermaidDiagram from '../components/ui/MermaidDiagram'
 
 interface Comment {
   id: string
@@ -162,9 +163,21 @@ const ArticleDetail = () => {
         <div className={styles.deco} />
 
         <div className={styles.content}>
-          <ReactMarkdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>
-            {article.content}
-          </ReactMarkdown>
+<ReactMarkdown
+  rehypePlugins={[rehypeRaw]}
+  remarkPlugins={[remarkGfm]}
+  components={{
+    code({ className, children }) {
+      const code = String(children).trim()
+      if (className === 'language-mermaid') {
+        return <MermaidDiagram code={code} />
+      }
+      return <code className={className}>{children}</code>
+    }
+  }}
+>
+  {article.content}
+</ReactMarkdown>
         </div>
 
         <div className={styles.shareSection}>
