@@ -91,6 +91,52 @@
   font-style: italic;
 }
 
+
+.content :global(pre) {
+  background: #2d2d2d; 
+  color: #ccc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;   
+  margin: 1.5rem 0;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  line-height: 1.5;
+}
+
+.content :global(code) {
+  font-size: 0.9rem;
+  white-space: pre; 
+}
+
+
+.content :global(:not(pre) > code) {
+  background: #eee;
+  color: var(--burgundy);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.content :global(img) {
+  max-width: 100%;   
+  height: auto;      
+  display: block;      
+  margin: 2rem auto; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
+}
+
+.content :global(img + em), 
+.content :global(img + p) {
+  display: block;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--warm-gray);
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
 .notFound {
   text-align: center;
   padding: 4rem;

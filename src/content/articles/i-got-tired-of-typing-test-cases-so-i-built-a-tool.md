@@ -1,5 +1,5 @@
 ---
-title: "I Got Tired of Typing. So I Built a Tool."
+title: "I Got Tired of Typing Test Cases. So I Built a Tool."
 category: "QA Automation"
 level : "Mid-Level"
 date: "2026-04-26"
