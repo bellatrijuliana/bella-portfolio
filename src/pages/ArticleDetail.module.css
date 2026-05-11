@@ -140,6 +140,18 @@
   font-style: italic;
 }
 
+.content :global(figure) {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.content :global(figcaption) {
+  font-size: 0.85rem;
+  color: var(--warm-gray);
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
 .notFound {
   text-align: center;
   padding: 4rem;

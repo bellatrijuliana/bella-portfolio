@@ -5,7 +5,7 @@ level : "Mid-Level"
 date: "2026-04-26"
 excerpt: "A solo QA engineer's journey from manual spreadsheets to building a custom test case generator."
 featured: true
-image: "/src/assets/docqav1.jpg"
+image: "/docqav1.jpg"
 theme: "sky"
 
 ---
@@ -140,9 +140,10 @@ This felt important to me. The engine was doing the tedious generation work, but
 ## What Changed (And What Didn't)
 
 <figure>
-    <img src="/src/assets/docqav1.jpg"
+    <img src="/docqav1.jpg"
          alt="DocQA Version 1"
-         width="680" height="320" >
+         width="680" height="320" 
+         loading="lazy"/>
     <figcaption>HTML Dashboard of DocQA v1</figcaption>
 </figure>
 
