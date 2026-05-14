@@ -5,7 +5,7 @@ level : "Beginner"
 date: "2026-03-26"
 excerpt: "I had no formal background in QA, but I took a leap of faith. During the interview, I was handed a website and a JSON file with zero instructions. Here’s how I handled it."
 featured: true
-image: "/images/articles/iseng.jpg"
+image: "/technical-test.png"
 theme: "sky"
 
 ---
