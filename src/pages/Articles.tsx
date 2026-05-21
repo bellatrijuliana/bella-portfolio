@@ -115,7 +115,7 @@ const Articles = () => {
         {/* --- PAGINATION --- */}
         {hasMore && (
           <div className={styles.pagination}>
-            <button onClick={() => setVisibleCount(prev => prev + 6)} className={styles.loadMoreBtn}>
+            <button onClick={() => setVisibleCount(prev => prev + 8)} className={styles.loadMoreBtn}>
               SHOW MORE
             </button>
           </div>
