@@ -8,7 +8,49 @@
               </url>
             
               <url>
-                  <loc>https://bellatrijuliana.com/articles/nekat-apply-qa-padahal-belum-punya-pengalaman</loc>
+                  <loc>https://bellatrijuliana.com/articles/docqa-v2-local-llm-and-risk-based-testing-tool</loc>
+                  <changefreq>weekly</changefreq>
+                  <priority>0.7</priority>
+              </url>
+            
+              <url>
+                  <loc>https://bellatrijuliana.com/articles/i-got-tired-of-typing-test-cases-so-i-built-a-tool</loc>
+                  <changefreq>weekly</changefreq>
+                  <priority>0.7</priority>
+              </url>
+            
+              <url>
+                  <loc>https://bellatrijuliana.com/articles/melamar-kerja-posisi-qa-tanpa-pengalaman</loc>
+                  <changefreq>weekly</changefreq>
+                  <priority>0.7</priority>
+              </url>
+            
+              <url>
+                  <loc>https://bellatrijuliana.com/articles/qa-ing-a-qa-tool-testing-zelqa-and-what-comes-next</loc>
+                  <changefreq>weekly</changefreq>
+                  <priority>0.7</priority>
+              </url>
+            
+              <url>
+                  <loc>https://bellatrijuliana.com/articles/zelqa-a-qa-framework-built-from-three-years-of-real-problems</loc>
+                  <changefreq>weekly</changefreq>
+                  <priority>0.7</priority>
+              </url>
+            
+              <url>
+                  <loc>https://bellatrijuliana.com/articles/zelqa-api-how-a-flask-backend-wraps-an-ai-model-into-a-qa-engine</loc>
+                  <changefreq>weekly</changefreq>
+                  <priority>0.7</priority>
+              </url>
+            
+              <url>
+                  <loc>https://bellatrijuliana.com/articles/zelqa-goes-web-why-a-cli-tool-needed-a-ui</loc>
+                  <changefreq>weekly</changefreq>
+                  <priority>0.7</priority>
+              </url>
+            
+              <url>
+                  <loc>https://bellatrijuliana.com/articles/zelqa-web-how-the-react-frontend-is-structured-and-what-building-the-ui-looked-like</loc>
                   <changefreq>weekly</changefreq>
                   <priority>0.7</priority>
               </url>
@@ -21,6 +63,18 @@
             
               <url>
                   <loc>https://bellatrijuliana.com/articles</loc>
+                  <changefreq>weekly</changefreq>
+                  <priority>0.7</priority>
+              </url>
+            
+              <url>
+                  <loc>https://bellatrijuliana.com/lifedebugging</loc>
+                  <changefreq>weekly</changefreq>
+                  <priority>0.7</priority>
+              </url>
+            
+              <url>
+                  <loc>https://bellatrijuliana.com/littlelab</loc>
                   <changefreq>weekly</changefreq>
                   <priority>0.7</priority>
               </url>
