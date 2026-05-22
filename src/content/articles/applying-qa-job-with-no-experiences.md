@@ -1,13 +1,14 @@
 ---
 title: "Applying for a QA Job with Zero Experience (How I Survived the Technical Test)"
 category: "QA Recruitment"
-level : "Beginner"
+level: "Beginner"
 date: "2026-03-26"
-excerpt: "I had no formal background in QA, but I took a leap of faith. During the interview, I was handed a website and a JSON file with zero instructions. Here’s how I handled it."
+excerpt: "I had no formal background in QA, but I took a leap of faith. During the interview, I was handed a website and a JSON file with zero instructions. Here's how I handled it."
 featured: true
 image: "/technical-test.png"
 theme: "sky"
-
+description: "How I landed a QA job with zero experience, surviving a technical test involving API testing with Postman and website testing with no instructions given."
+keywords: "QA job no experience, how to get QA job, QA technical test, software QA beginner, apply QA engineer"
 ---
 
 *Estimated read: 5–6 minutes*

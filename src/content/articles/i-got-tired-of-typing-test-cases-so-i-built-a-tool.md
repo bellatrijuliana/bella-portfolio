@@ -1,13 +1,14 @@
 ---
 title: "I Got Tired of Typing Test Cases. So I Built a Tool."
 category: "QA Automation"
-level : "Mid-Level"
+level: "Mid-Level"
 date: "2026-04-26"
 excerpt: "A solo QA engineer's journey from manual spreadsheets to building a custom test case generator."
 featured: true
 image: "/docqav1.jpg"
 theme: "sky"
-
+description: "How I went from manually writing test cases in spreadsheets to building my own AI-powered test case generator as a solo QA engineer at a startup."
+keywords: "test case generator, QA automation tool, solo QA engineer, build QA tool, manual testing to automation"
 ---
 
 *Estimated read: 5–6 minutes*

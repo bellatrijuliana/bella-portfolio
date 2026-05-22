@@ -1,13 +1,14 @@
 ---
 title: "QA-ing a QA Tool: Testing Zelqa and What Comes Next"
 category: "QA Automation"
-level : "Mid-Level"
+level: "Mid-Level"
 date: "2026-05-20"
 excerpt: "What it looks like when a QA engineer tests their own tool and what the roadmap looks like from here."
 featured: true
 image: "/zelqa-generate-page-2.png"
 theme: "sky"
-
+description: "What happens when a QA engineer tests their own tool, a behind-the-scenes look at testing Zelqa, the bugs found, and the roadmap for what comes next."
+keywords: "testing QA tool, Zelqa, QA engineer tests own tool, QA automation roadmap, solo QA engineer project"
 ---
 
 *Estimated read: 6–7 minutes*

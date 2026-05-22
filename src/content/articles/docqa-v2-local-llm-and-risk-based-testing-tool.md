@@ -1,13 +1,14 @@
 ---
 title: "DocQA v2.0: Integrating a Local LLM, Risk-Based Testing, and What It Looks Like When AI Writes the First Draft of Your Test Cases"
 category: "QA Automation"
-level : "Mid-Level"
+level: "Mid-Level"
 date: "2026-05-01"
 excerpt: "A solo QA engineer's journey from manual spreadsheets to building a custom test case generator."
 featured: true
 image: "/docqa2.jpg"
 theme: "sky"
-
+description: "How I built DocQA v2.0, a local LLM-powered test case generator with Risk-Based Testing that automates the first draft of QA test cases without sending data to the cloud."
+keywords: "AI test case generator, local LLM QA, risk-based testing, DocQA, QA automation tool, Ollama QA"
 ---
 
 *Estimated read: 6–7 minutes*

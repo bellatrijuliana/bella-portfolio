@@ -1,13 +1,14 @@
 ---
 title: "Zelqa Goes Web: Why a CLI Tool Needed a UI"
 category: "QA Automation"
-level : "Mid-Level"
+level: "Mid-Level"
 date: "2026-05-17"
 excerpt: "Zelqa started as a Python script for one person. This is why it needed to become something anyone could use."
 featured: true
 image: "/zelqacli-zelqawebv1.png"
 theme: "sky"
-
+description: "Why I decided to turn Zelqa from a CLI Python script into a full web application and what that transition looked like as a solo QA engineer building their own tool."
+keywords: "CLI to web app, Zelqa web, QA tool UI, Python CLI to React, solo developer QA tool, QA web application"
 ---
 
 *Estimated read: 6–7 minutes*

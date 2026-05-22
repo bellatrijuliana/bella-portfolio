@@ -7,9 +7,9 @@ excerpt: "Lulus dari Elektro, nekat ngelamar QA tanpa pengalaman sama sekali dan
 featured: false
 image: "/technical-test.png"
 theme: "amber"
-
+description: "Cerita bagaimana aku melamar posisi QA Engineer tanpa pengalaman sama sekali setelah lulus kuliah, dan ternyata berhasil lolos seleksi."
+keywords: "melamar kerja QA tanpa pengalaman, cara jadi QA engineer, QA engineer pemula, tips lolos interview QA, belajar QA dari nol"
 ---
-
 *Estimated read: 6–7 minutes*
 
 ---

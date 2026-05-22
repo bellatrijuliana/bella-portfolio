@@ -1,13 +1,14 @@
 ---
 title: "Zelqa API: How a Flask Backend Wraps an AI Model Into a QA Engine"
 category: "QA Automation"
-level : "Mid-Level"
+level: "Mid-Level"
 date: "2026-05-18"
 excerpt: "A breakdown of how zelqa-api works, from the project structure to how test cases get generated."
 featured: true
 image: "/zelqa-generate-page-1.png"
 theme: "sky"
-
+description: "A deep dive into how Zelqa API works, how a Flask backend wraps a local AI model into a QA engine that auto-generates test cases from raw requirements."
+keywords: "Flask QA API, AI QA engine, Zelqa API, local LLM backend, test case generation API, Python Flask QA tool"
 ---
 
 *Estimated read: 6–7 minutes*

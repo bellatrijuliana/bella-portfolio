@@ -1,13 +1,14 @@
 ---
 title: "Zelqa Web: How the React Frontend is Structured and What Building the UI Looked Like"
 category: "QA Automation"
-level : "Mid-Level"
+level: "Mid-Level"
 date: "2026-05-19"
 excerpt: "A walkthrough of the zelqa-web frontend, how it is structured, what each page does, and the thinking behind the design."
 featured: true
 image: "/zelqa-dashboard-page.png"
 theme: "sky"
-
+description: "A walkthrough of how the Zelqa React frontend is structured from page architecture to UI design decisions made by a solo QA engineer building their own web app."
+keywords: "React frontend structure, Zelqa web frontend, QA tool UI design, React app architecture, solo developer React, QA web app"
 ---
 
 *Estimated read: 6–7 minutes*

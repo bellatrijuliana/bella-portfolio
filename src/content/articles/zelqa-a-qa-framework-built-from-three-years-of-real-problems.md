@@ -1,13 +1,14 @@
 ---
 title: "Zelqa: A QA Framework Built from Three Years of Real Problems"
 category: "QA Automation"
-level : "Mid-Level"
+level: "Mid-Level"
 date: "2026-05-11"
-excerpt: "Three years in, I stopped patching my old tool and built something that was truly mine.""
+excerpt: "Three years in, I stopped patching my old tool and built something that was truly mine."
 featured: true
 image: "/zelqa1.png"
 theme: "sky"
-
+description: "How I built Zelqa (an open-source AI-powered QA lifecycle framework) after three years of solving real problems as a solo QA engineer at a startup."
+keywords: "Zelqa, open source QA framework, AI powered QA tool, solo QA engineer, QA lifecycle framework, test automation framework Python"
 ---
 
 *Estimated read: 6–7 minutes*
