@@ -144,16 +144,19 @@ const ArticleDetail = () => {
 
   return (
     <main className={styles.page}>
-          <Helmet>
-      <title>{article.title} | One More Test</title>
-      <meta name="description" content={article.description || article.excerpt} />
-      <meta name="keywords" content={article.keywords || ''} />
-      <meta property="og:title" content={article.title} />
-      <meta property="og:description" content={article.description || article.excerpt} />
-      <meta property="og:url" content={`https://bellatrijuliana.com/articles/${article.id}`} />
-      <meta property="og:image" content={article.image || '/og-image.jpg'} />
-      <link rel="canonical" href={`https://bellatrijuliana.com/articles/${article.id}`} />
-    </Helmet>
+<Helmet>
+  <title>{article.title} | One More Test</title>
+  <meta name="description" content={article.description || article.excerpt} />
+  <meta name="keywords" content={article.keywords || ''} />
+  <meta property="og:title" content={article.title} />
+  <meta property="og:description" content={article.description || article.excerpt} />
+  <meta property="og:url" content={`https://bellatrijuliana.com/articles/${article.id}`} />
+  <meta property="og:image" content={`https://bellatrijuliana.com${article.image || '/og-image.jpg'}`} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:type" content="article" />
+  <link rel="canonical" href={`https://bellatrijuliana.com/articles/${article.id}`} />
+</Helmet>
       <article className={styles.inner}>
         <Link to="/articles" className={styles.back}>← Semua Artikel</Link>
 
