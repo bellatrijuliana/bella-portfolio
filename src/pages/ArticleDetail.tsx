@@ -7,6 +7,7 @@ import { getArticleById, getAdjacentArticles } from '../lib/articles'
 import { supabase } from '../lib/supabase'
 import styles from './ArticleDetail.module.css'
 import MermaidDiagram from '../components/ui/MermaidDiagram'
+import { Helmet } from 'react-helmet-async'
 
 interface Comment {
   id: string
@@ -112,6 +113,7 @@ const ArticleDetail = () => {
         <Link to="/articles">← Kembali ke semua artikel</Link>
       </div>
     </main>
+    
   )
 
   const shareUrl = window.location.href
@@ -142,6 +144,16 @@ const ArticleDetail = () => {
 
   return (
     <main className={styles.page}>
+          <Helmet>
+      <title>{article.title} | One More Test</title>
+      <meta name="description" content={article.description || article.excerpt} />
+      <meta name="keywords" content={article.keywords || ''} />
+      <meta property="og:title" content={article.title} />
+      <meta property="og:description" content={article.description || article.excerpt} />
+      <meta property="og:url" content={`https://bellatrijuliana.com/articles/${article.id}`} />
+      <meta property="og:image" content={article.image || '/og-image.jpg'} />
+      <link rel="canonical" href={`https://bellatrijuliana.com/articles/${article.id}`} />
+    </Helmet>
       <article className={styles.inner}>
         <Link to="/articles" className={styles.back}>← Semua Artikel</Link>
 

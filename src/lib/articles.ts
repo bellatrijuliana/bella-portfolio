@@ -5,9 +5,11 @@ export interface ArticleMeta {
   category: string
   date: string
   excerpt: string
-  theme: string 
+  theme: string
   featured?: boolean
   image?: string
+  description?: string  // ← tambah ini
+  keywords?: string     // ← tambah ini
 }
 
 export interface Article extends ArticleMeta {
@@ -61,17 +63,19 @@ export function getAllArticles(): ArticleMeta[] {
       
       const theme = data.theme || AVAILABLE_THEMES[index % AVAILABLE_THEMES.length]
 
-      return {
-        id,
-        title: data.title || '',
-        category: data.category || '',
-        level: data.level || '',
-        date: data.date || '',
-        excerpt: data.excerpt || '',
-        theme, 
-        featured: data.featured === 'true',
-        image: data.image || '',  
-      } as ArticleMeta
+return {
+  id,
+  title: data.title || '',
+  category: data.category || '',
+  level: data.level || '',
+  date: data.date || '',
+  excerpt: data.excerpt || '',
+  theme,
+  featured: data.featured === 'true',
+  image: data.image || '',
+  description: data.description || data.excerpt || '',  // ← tambah ini
+  keywords: data.keywords || '',                         // ← tambah ini
+} as ArticleMeta
     })
     .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
 }
@@ -87,15 +91,17 @@ export function getArticleById(id: string): Article | null {
   const allArticles = getAllArticles();
   const meta = allArticles.find(a => a.id === id);
 
-  return {
-    id,
-    title: data.title || '',
-    category: data.category || '',
-    level: data.level || '',
-    date: data.date || '',
-    excerpt: data.excerpt || '',
-    theme: meta?.theme || AVAILABLE_THEMES[0], 
-    featured: data.featured === 'true',
-    content,
-  } as Article
+return {
+  id,
+  title: data.title || '',
+  category: data.category || '',
+  level: data.level || '',
+  date: data.date || '',
+  excerpt: data.excerpt || '',
+  theme: meta?.theme || AVAILABLE_THEMES[0],
+  featured: data.featured === 'true',
+  content,
+  description: data.description || data.excerpt || '',  // ← tambah ini
+  keywords: data.keywords || '',                         // ← tambah ini
+} as Article
 }
